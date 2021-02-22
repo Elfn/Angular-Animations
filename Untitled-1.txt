@@ -1,0 +1,9 @@
+
+
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin http://192.168.20.23/elimane.fofana/veropay_marchand_2021.git
+git push -u origin main
