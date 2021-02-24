@@ -1,0 +1,6 @@
+<app-language
+  *ngFor="let item of languages"
+  [languages]="item"
+  (click)="item.isPopular = !item.isPopular"
+  [ngClass]="{ active: item.isPopular }"
+></app-language>
