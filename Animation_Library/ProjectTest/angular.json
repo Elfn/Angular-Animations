@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "6b79cb39-7464-43a6-8894-de750b655ac6"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-dynamic-style": {
+    "ProjectTest": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,15 +16,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-dynamic-style",
+            "outputPath": "dist/ProjectTest",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -37,7 +42,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -60,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-dynamic-style:build"
+            "browserTarget": "ProjectTest:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-dynamic-style:build:production"
+              "browserTarget": "ProjectTest:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-dynamic-style:build"
+            "browserTarget": "ProjectTest:build"
           }
         },
         "test": {
@@ -81,8 +85,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "scripts": []
           }
         },
@@ -94,26 +103,25 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-dynamic-style:serve"
+            "devServerTarget": "ProjectTest:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-dynamic-style:serve:production"
+              "devServerTarget": "ProjectTest:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ng-dynamic-style",
-  "cli": {
-    "analytics": "dce7e115-d151-4922-846c-3e9bb19273ce"
-  }
+  "defaultProject": "ProjectTest"
 }

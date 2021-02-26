@@ -1,0 +1,19 @@
+<div
+  (mousedown)="clickInfo = 'mouseDown'"
+  (click)="onClickSimple()"
+  [@clicked]="clickInfo"
+></div>
+
+<hr />
+<input type="number" (input)="numEntered = $event.target.value" />
+<br /><br />
+<span [@numEnteredState]="numEntered == 1 ? 'selected' : 'unselected'">1</span>
+<span [@numEnteredState]="numEntered == 2 ? 'selected' : 'unselected'">2</span>
+<span [@numEnteredState]="numEntered == 3 ? 'selected' : 'unselected'">3</span>
+<span [@numEnteredState]="numEntered == 4 ? 'selected' : 'unselected'">4</span>
+<span [@numEnteredState]="numEntered == 5 ? 'selected' : 'unselected'">5</span>
+<span [@numEnteredState]="numEntered == 6 ? 'selected' : 'unselected'">6</span>
+<span [@numEnteredState]="numEntered == 7 ? 'selected' : 'unselected'">7</span>
+<span [@numEnteredState]="numEntered == 8 ? 'selected' : 'unselected'">8</span>
+<span [@numEnteredState]="numEntered == 9 ? 'selected' : 'unselected'">9</span>
+<span [@numEnteredState]="numEntered == 0 ? 'selected' : 'unselected'">0</span>
