@@ -3,23 +3,17 @@
     <h3>My Projects</h3>
   </div>
 </div>
-<hr />
+<hr>
 <div class="row">
   <div class="col-xs-12">
     <button
       class="btn btn-default"
       *ngIf="!createNew"
-      (click)="createNew = true"
-    >
-      Create new Project
-    </button>
+      (click)="createNew = true">Create new Project</button>
     <button
       class="btn btn-danger"
       *ngIf="createNew"
-      (click)="createNew = false"
-    >
-      Cancel
-    </button>
+      (click)="createNew = false">Cancel</button>
   </div>
 </div>
 <div class="row">
@@ -27,26 +21,25 @@
     <app-new-project
       *ngIf="createNew"
       (projectCreated)="onProjectCreated($event)"
-      (creationCancelled)="createNew = false"
-    ></app-new-project>
+      (creationCancelled)="createNew = false"></app-new-project>
   </div>
 </div>
-<hr />
+<hr>
 <div class="row">
   <div class="col-xs-12">
-    <div class="loading-bar" *ngIf="!projects">
-      <div class="loading-bar-element" *ngIf="progress != 'finished'"></div>
+    <div
+      class="loading-bar"
+      *ngIf="!projects">
+      <div
+        class="loading-bar-element"
+        *ngIf="progress != 'finished'"></div>
     </div>
     <app-project
       *ngFor="let prj of projects; let i = index"
       [project]="prj"
-      [@markedState]="markedPrjIndex === i ? 'marked' : 'default'"
-      [ngClass]="{
-        inactive: prj.status === 'inactive'
-      }"
+      [ngClass]="{marked: markedPrjIndex === i, inactive: prj.status === 'inactive'}"
       (statusUpdated)="onStatusUpdated($event, i)"
       (projectDeleted)="onProjectDeleted(i)"
-      (click)="markedPrjIndex = i"
-    ></app-project>
+      (click)="markedPrjIndex = i"></app-project>
   </div>
 </div>
